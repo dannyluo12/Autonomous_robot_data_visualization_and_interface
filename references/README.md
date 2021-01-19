@@ -22,3 +22,13 @@ Citation references here: <br/>
 [15] https://github.com/sisaha9/dsc180a-slam-simulator/tree/main?fbclid=IwAR3b-jkkB0VUGdEm4pWDdQxwG3R6gI8_n23VGCdmtp7Ll94vEog-EgCivEU <br/>
 [16] https://ieeexplore.ieee.org/abstract/document/8317265 <br/>
 ***
+
+***
+New Citations <br/>
+[1] https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/192
+[2] https://avp-project.uk/path-planning-using-the-osm-xml-map
+[3] https://jonathan-hui.medium.com/self-driving-car-path-planning-to-maneuver-the-traffic-ac63f5a620e2
+
+
+***
+
