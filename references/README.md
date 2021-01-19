@@ -25,9 +25,9 @@ Citation references here: <br/>
 
 ***
 New Citations <br/>
-[1] https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/192
-[2] https://avp-project.uk/path-planning-using-the-osm-xml-map
-[3] https://jonathan-hui.medium.com/self-driving-car-path-planning-to-maneuver-the-traffic-ac63f5a620e2
+[1] https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/192 <br/>
+[2] https://avp-project.uk/path-planning-using-the-osm-xml-map <br/>
+[3] https://jonathan-hui.medium.com/self-driving-car-path-planning-to-maneuver-the-traffic-ac63f5a620e2 <br/>
 
 
 ***
