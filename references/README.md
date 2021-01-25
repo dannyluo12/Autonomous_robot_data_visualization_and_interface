@@ -28,7 +28,15 @@ New Citations <br/>
 [1] https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/192 <br/>
 [2] https://avp-project.uk/path-planning-using-the-osm-xml-map <br/>
 [3] https://jonathan-hui.medium.com/self-driving-car-path-planning-to-maneuver-the-traffic-ac63f5a620e2 <br/>
-
+<br/>
+check these out <br/>
+[4] https://docs.google.com/presentation/d/1WF4iZBzXL3PYpVYZRTxiWcomRrCbiK-MJGgjndX3KYk/edit#slide=id.gafa0e1a93b_0_0 <br/>
+[5] http://gazebosim.org/tutorials?tut=drcsim_visualization&cat=drcsim <br/>
+[6] https://webviz.io/ <br/>
+[7] https://github.com/cruise-automation/webviz <br/>
+[8] https://answers.ros.org/question/217324/visualizing-gazebo-model-in-rviz/ <br/>
+[9] look at rosbag Jay sent (google rosbag visualization) <br/>
+[10]
 
 ***
 
