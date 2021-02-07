@@ -3,10 +3,14 @@
 This project aims to create and illustrate data visualizations for autonomous robots. In addition, interfacing and interacting with the robot via an interface will also be demonstrated in this repository. Primarily, visualizations will be done in ROS, Gazebo, and other robotics software. Autoware simulator is also a potential building block later on. 
 
 ## Running the project
-TODO
+* Use the command `launch.sh -i elvishelvis/dsc180s2g3 -c 4 -m 8  -P Always` in order to have the necessary environment to run data processing, analysis, and visualization
 
 ## Building the project using `run.py`
-TODO
+* Use the commang `python run.py data` to ...
+* Use the command `python run.py eda` to ...
+* Use the command `python run.py plot` to ...
+* Use the command `python run.py test` to ...
+* Use the command `python run.py all` to ...
 
 ### Contributions:
 TODO
