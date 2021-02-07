@@ -1,4 +1,4 @@
 {
-    "map" : "test_track.png",
+    "map" : "./testdata/test_images/test_track.PNG",
     "stepsize" : "20"
 }
