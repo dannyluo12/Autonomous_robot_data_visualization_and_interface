@@ -17,8 +17,9 @@ def main(targets):
     if 'test' in targets: 
         get_coords = points_func(**points_cfg)
         get_track = mapping_data(**mapping_cfg)
-        # python generate_rrt_vis.py -start 100 150 -stop 350 350 -p test_track.png -s 20 # will have to try to run this
-        print('')
+        # python generate_rrt_vis.py -start 100 150 -stop 350 350 -p test_track.png -s 20 
+        # will have to try to run line above 
+        print('Successfully ran RRT visualization on test_track.png, optimal navigation path can be viewed <path here>')
         
     if 'data' in targets:
         #getting_data = get_data(**data_cfg)
@@ -42,7 +43,10 @@ def main(targets):
         #gmapping_plot = plot_data(**gmapping_plots_cfg)
         #rtab_plot = plot_data(**rtab_plots_cfg)
         print('Data pipeline process of ... is successfull')
- 
+        
+        
+        
+        
 if __name__ == '__main__':
     targets = sys.argv[1:]
     main(targets)
