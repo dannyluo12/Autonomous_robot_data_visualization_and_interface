@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 steps/
+testdata/step_out/
+testdata/test_out/
 
 # C extensions
 *.so
