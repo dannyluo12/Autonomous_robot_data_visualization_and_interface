@@ -1,4 +1,6 @@
 {
-    "map" : "./testdata/test_images/test_track.PNG",
-    "stepsize" : "20"
+    "map_" : "testdata/test_images/maze.png",
+    "stepsize" : "20",
+    "step_dir": "testdata/step_out/",
+    "out_dir":"testdata/test_out/"
 }

@@ -71,8 +71,10 @@ def RRT(img, img2, start, end, stepSize):
             for j in range(len(node_list[i].parent_x)-1):
                 cv2.line(img2, (int(node_list[i].parent_x[j]),int(node_list[i].parent_y[j])), (int(node_list[i].parent_x[j+1]),int(node_list[i].parent_y[j+1])), (255,0,0), thickness=2, lineType=8)
             # cv2.waitKey(1)
-            cv2.imwrite("steps/"+str(i)+".jpg",img2)
-            cv2.imwrite("out.jpg",img2)
+            cv2.imwrite(args.step_dir+str(i)+".jpg",img2)
+            # this is for the visualization of interface, will refresh every second
+            cv2.imwrite(args.step_dir+"curstep.jpg",img2)
+            cv2.imwrite(args.out_dir+"out.jpg",img2)
             break
 
         elif nodeCon:
@@ -89,9 +91,11 @@ def RRT(img, img2, start, end, stepSize):
             # display
             cv2.circle(img2, (int(tx),int(ty)), 2,(0,0,255),thickness=3, lineType=8)
             cv2.line(img2, (int(tx),int(ty)), (int(node_list[nearest_ind].x),int(node_list[nearest_ind].y)), (0,255,0), thickness=1, lineType=8)
-            cv2.imwrite("steps/"+str(i)+".jpg",img2)
-            cv2.imshow("sdc",img2)
-            cv2.waitKey(1)
+            cv2.imwrite(args.step_dir+str(i)+".jpg",img2)
+            # this is for the visualization of interface, will refresh every second
+            cv2.imwrite(args.step_dir+"curstep.jpg",img2)
+            # cv2.imshow("sdc",img2)
+            # cv2.waitKey(1)
             continue
         else:
             print("No direct connection and no node connection; Generating new rnd numbers")
@@ -102,9 +106,10 @@ def collision(x1,y1,x2,y2):
     color=[]
     x = list(np.arange(x1,x2,(x2-x1)/100))
     y = list(((y2-y1)/(x2-x1))*(x-x1) + y1)
-    print("collision",x,y)
+    # print("collision",x,y)
+    print("collision")
     for i in range(len(x)):
-        print(int(x[i]),int(y[i]))
+        # print(int(x[i]),int(y[i]))
         color.append(img[int(y[i]),int(x[i])])
     if (0 in color):
         return True #collision
@@ -116,7 +121,7 @@ def check_collision(x1,y1,x2,y2):
     _,theta = dist_and_angle(x2,y2,x1,y1)
     x=x2 + stepSize*np.cos(theta)
     y=y2 + stepSize*np.sin(theta)
-    print(x2,y2,x1,y1)
+    # print(x2,y2,x1,y1)
     print("theta",theta)
     print("check_collision",x,y)
 
@@ -172,45 +177,59 @@ def draw_circle(event,x,y,flags,param):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description = 'Below are the params:')
-    parser.add_argument('-p', type=str, default='world2.png',metavar='ImagePath', action='store', dest='imagePath',
+    parser.add_argument('-p', type=str, default='../testdata/test_images/maze.png',metavar='ImagePath', action='store', dest='imagePath',
                     help='Path of the image containing mazes')
     parser.add_argument('-s', type=int, default=10,metavar='Stepsize', action='store', dest='stepSize',
                     help='Step-size to be used for RRT branches')
-    parser.add_argument('-start', type=int, default=[20,20], metavar='startCoord', dest='start', nargs='+',
+    parser.add_argument('-start', type=int, default=[2,48], metavar='startCoord', dest='start', nargs='+',
                     help='Starting position in the maze')
-    parser.add_argument('-stop', type=int, default=[450,250], metavar='stopCoord', dest='stop', nargs='+',
+    parser.add_argument('-stop', type=int, default=[225,174], metavar='stopCoord', dest='stop', nargs='+',
                     help='End position in the maze')
     parser.add_argument('-selectPoint', help='Select start and end points from figure', action='store_true')
+    parser.add_argument('-step_dir', help='the root path of output step picture',default="../testdata/viz_out/")
+    parser.add_argument('-out_dir', help='the root path of output step picture',default="../testdata/test_out/")
 
     args = parser.parse_args()
 
     # remove previously stored data
     try:
-        os.system("rm -rf steps")
+        os.system("rm -rf {}".format(args.step_dir))
     except:
         print("Dir already clean")
-    os.mkdir("steps")
+    # os.mkdir("steps")
+    os.makedirs(args.step_dir,exist_ok=True)
+
+    try:
+        os.system("rm -rf {}".format(args.out_dir))
+    except:
+        print("Dir already clean")
+    # os.mkdir("steps")
+    os.makedirs(args.out_dir,exist_ok=True)
+
 
     img = cv2.imread(args.imagePath,0) # load grayscale maze image
     img2 = cv2.imread(args.imagePath) # load colored maze image
-    start = tuple(args.start) #(20,20) # starting coordinate
+    start = tuple(args.start) #(20,20) # stasrting coordinate
     end = tuple(args.stop) #(450,250) # target coordinate
     stepSize = args.stepSize # stepsize for RRT
     node_list = [0] # list to store all the node points
 
-    coordinates=[]
-    if args.selectPoint:
-        print("Select start and end points by double clicking, press 'escape' to exit")
-        cv2.namedWindow('image')
-        cv2.setMouseCallback('image',draw_circle)
-        while(1):
-            cv2.imshow('image',img2)
-            k = cv2.waitKey(20) & 0xFF
-            if k == 27:
-                break
-        # print(coordinates)
-        start=(coordinates[0],coordinates[1])
-        end=(coordinates[2],coordinates[3])
-
+    # coordinates=[]
+    # if args.selectPoint:
+    #     print("Select start and end points by double clicking, press 'escape' to exit")
+    #     # cv2.namedWindow('image')
+    #     # cv2.setMouseCallback('image',draw_circle)
+    #     # while(1):
+    #     #     cv2.imshow('image',img2)
+    #     #     k = cv2.waitKey(20) & 0xFF
+    #     #     if k == 27:
+    #     #         break
+    #     # print(coordinates)
+    #     # start=(coordinates[0],coordinates[1])
+    #     # end=(coordinates[2],coordinates[3])
+    #     start=(2, 48)
+    #     end=(225, 174)
     # run the RRT algorithm 
     RRT(img, img2, start, end, stepSize)
+
+

@@ -20,4 +20,4 @@ Contributed to developing visualizations for RRT* and A* algorithms. Collected a
 TODO
 
 <b>Jia Shi</b> A15233744 <br />
-TODO
+Contributed to the research of visualization and interface. Developed a interactive interface with roslibjs and webridge to connect ROS with web page. Finished the course of web visualization on Robot ignite and transfer the workspace into local machine. Helped other teams with the line detection algorithm. Helped teammates with the coding and helped with the setup and completion of github repo.
