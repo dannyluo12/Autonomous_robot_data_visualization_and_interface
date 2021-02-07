@@ -1,0 +1,4 @@
+{
+    "map" : "test_track.png",
+    "stepsize" : "20"
+}
