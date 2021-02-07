@@ -15,8 +15,8 @@ mapping_cfg = json.load(open('config/rrt_vis_mapping.json'))
 def main(targets):
     #TODO
     if 'test' in targets: 
-        ros_csv_data = points_func(**data_cfg)
-        csv_data_plots = mapping_data(**test_plots_cfg)
+        get_coords = points_func(**points_cfg)
+        get_track = mapping_data(**mapping_cfg)
         # python generate_rrt_vis.py -start 100 150 -stop 350 350 -p test_track.png -s 20 # will have to try to run this
         print('')
         
