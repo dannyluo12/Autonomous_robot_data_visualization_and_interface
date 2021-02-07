@@ -16,10 +16,10 @@ check these out <br/>
 [6] https://webviz.io/ <br/>
 [7] https://github.com/cruise-automation/webviz <br/>
 [8] https://answers.ros.org/question/217324/visualizing-gazebo-model-in-rviz/ <br/>
-[9] https://github.com/nimRobotics/RRT
-[10] http://wiki.ros.org/rosbridge_suite/Tutorials/RunningRosbridge#Talking_to_Rosbridge
-[11] https://www.youtube.com/results?search_query=webviz+
-[12] http://wiki.ros.org/rrt_exploration
+[9] https://github.com/nimRobotics/RRT <br/>
+[10] http://wiki.ros.org/rosbridge_suite/Tutorials/RunningRosbridge#Talking_to_Rosbridge <br/>
+[11] https://www.youtube.com/results?search_query=webviz+ <br/> 
+[12] http://wiki.ros.org/rrt_exploration <br/>
 
 
 ***
