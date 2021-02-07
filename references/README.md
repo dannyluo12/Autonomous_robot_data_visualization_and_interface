@@ -1,6 +1,6 @@
-# DSC180A A02 Group 3
+# DSC180B C01 Group 3
 
-## [Final Report](https://docs.google.com/document/d/1qqh2aneYYA49mJ8OWd9EqrixGu1xMaPa6zLT7eekv6o/edit?usp=sharing)
+## [Final Report](link yet to be added)
 * <b>note: </b> permissions are set to any ucsd email can view
 
 
