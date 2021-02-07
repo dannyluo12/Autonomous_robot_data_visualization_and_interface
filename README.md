@@ -13,7 +13,7 @@ This project aims to create and illustrate data visualizations for autonomous ro
 Contributed to developing visualizations for RRT* and A* algorithms. Collected and cleaned data from alternative groups to enable visualization and interface development. Tested different ROSBAGS for data type compatibility. Investigated various forms of visualization from different ROS topics (diff sensors, camera, lidar, etc.). Helped in managing and updating Github repo.
 
 <b>Seokmin Hong</b> A14614169 <br />
-TODO
+Contributed by developing the RRT* and A* algorithms in the gazebo simulator using different ROS packages as well as writing Rviz scripts to allow autonomous navigation using these algorithms. Also downloaded and implemented the F1Tenth track in the gazebo simulator that will be used for future on-line racing. Mainly helped teammates in creating and writing the report.
 
 <b>Jia Shi</b> A15233744 <br />
 Contributed to the research of visualization and interface. Developed a interactive interface with roslibjs and webridge to connect ROS with web page. Finished the course of web visualization on Robot ignite and transfer the workspace into local machine. Helped other teams with the line detection algorithm. Helped teammates with the coding and helped with the setup and completion of github repo.
