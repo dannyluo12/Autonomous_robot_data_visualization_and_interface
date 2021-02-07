@@ -15,10 +15,10 @@ USER root
 RUN apt-get -y install vim
 RUN pip install --upgrade pip
 # 3) install packages
-RUN pip install --no-cache-dir rospkg bagpy pandas numpy opencv-python argparse python-math
-#RUN pip3 install --no-cache-dir rospkg bagpy pandas numpy opencv-python argparse python-math
+RUN pip install --no-cache-dir rospkg bagpy pandas numpy opencv-python argparse matplotlib python-math
+#RUN pip3 install --no-cache-dir rospkg bagpy pandas numpy opencv-python argparse matplotlib python-math
 
 # 4) change back to notebook user
-#COPY /Docker/run_jupyter.sh /
-#RUN chmod 777 /run_jupyter.sh
-#USER $NB_UID
+COPY run_jupyter.sh /
+RUN chmod 777 /run_jupyter.sh
+USER $NB_UID
