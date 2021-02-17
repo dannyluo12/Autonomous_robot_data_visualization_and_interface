@@ -50,7 +50,8 @@ let vueApp = new Vue({
         pub_title: 'RosBridge Publish',
         camera_title: "Input from Camera",
         IMU_title: "Input from IMU",
-        navi_title: "RRT Nagivation"
+        navi_title: "RRT Nagivation",
+        IMU_G1_title: "IMU Viz 1(Dummy data)"
     },
     methods: {
         connect: function() {
@@ -154,3 +155,61 @@ let vueApp = new Vue({
         console.log('page is ready!')
     },
 })
+
+Highcharts.chart('container', {
+
+  chart: {
+    polar: true
+  },
+
+  title: {
+    text: ''
+  },
+
+  subtitle: {
+    text: 'Angular Twise X, Y, Z'
+  },
+
+  pane: {
+    startAngle: 0,
+    endAngle: 360
+  },
+
+  xAxis: {
+    tickInterval: 5,
+    min: 0,
+    max: 360,
+    labels: {
+      format: '{value}'
+    }
+  },
+
+  yAxis: {
+    min: 0
+  },
+
+  plotOptions: {
+    series: {
+      pointStart: 0,
+      pointInterval: 45
+    },
+    column: {
+      pointPadding: 0,
+      groupPadding: 0
+    }
+  },
+
+  series: [{
+    type: 'column',
+    name: 'X',
+    data: [1, 1, 1, 8, 1, 1, 1, 1]
+  }, {
+    type: 'line',
+    name: 'Y',
+    data: [1,1,1,1, 1, 1, 8, 1]
+  }, {
+    type: 'area',
+    name: 'Z',
+    data: [1, 8, 1, 1, 1, 1, 1, 1]
+  }]
+});

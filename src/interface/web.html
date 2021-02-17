@@ -4,6 +4,7 @@
     <title>Robot Interface</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
      crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="code.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
 
     </script>
@@ -75,7 +76,7 @@
                             <h2 class="text-center">{{ camera_title }}</h2>
                             <hr>
                             <p>run: python rgb8.py</p>
-                            <img src="camera.png" id='img_camera' alt="The sensor image" style="width:400px;height:300px;">
+                            <img src="camera.png" id='img_camera' alt="The camera image" style="width:400px;height:300px;">
                             
                             
                         </div>
@@ -88,14 +89,14 @@
                             <h2 class="text-center">{{ navi_title }}</h2>
                             <hr>
                             <p>run: python3 generate_rrt_vis.py</p>
-                            <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The sensor image" style="width:400px;height:300px;">
+                            <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The navigation image" style="width:400px;height:300px;">
                             
                             
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-10">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h2 class="text-center">{{ IMU_title }}</h2>
@@ -119,6 +120,27 @@
                             <p id="linear_acceleration"></p>
                             <p >orientation_imu</p>
                             <p id="orientation_imu"></p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">{{ IMU_G1_title }}</h2>
+                            <hr>
+                            <h4>Need more instruction of what to show from bag</h4>
+                            <script src="https://code.highcharts.com/highcharts.js"></script>
+                            <script src="https://code.highcharts.com/highcharts-more.js"></script>
+                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+                            <figure class="highcharts-figure">
+                              <div id="container"></div>
+                              
+                            </figure>
                             
                             
                         </div>
