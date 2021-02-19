@@ -15,6 +15,7 @@ import math
 import random
 import argparse
 import os
+import copy
 
 class Nodes:
     """Class to store the RRT graph"""
@@ -58,8 +59,8 @@ def RRT(img, img2, start, end, stepSize):
             print("Node can connect directly with end")
             node_list.append(i)
             node_list[i] = Nodes(tx,ty)
-            node_list[i].parent_x = node_list[nearest_ind].parent_x.copy()
-            node_list[i].parent_y = node_list[nearest_ind].parent_y.copy()
+            node_list[i].parent_x = copy.copy(node_list[nearest_ind].parent_x)
+            node_list[i].parent_y = copy.copy(node_list[nearest_ind].parent_y)
             node_list[i].parent_x.append(tx)
             node_list[i].parent_y.append(ty)
 
@@ -82,8 +83,8 @@ def RRT(img, img2, start, end, stepSize):
             print("Nodes connected")
             node_list.append(i)
             node_list[i] = Nodes(tx,ty)
-            node_list[i].parent_x = node_list[nearest_ind].parent_x.copy()
-            node_list[i].parent_y = node_list[nearest_ind].parent_y.copy()
+            node_list[i].parent_x = copy.copy(node_list[nearest_ind].parent_x)
+            node_list[i].parent_y = copy.copy(node_list[nearest_ind].parent_y)
             # print(i)
             # print(node_list[nearest_ind].parent_y)
             node_list[i].parent_x.append(tx)
@@ -95,6 +96,8 @@ def RRT(img, img2, start, end, stepSize):
             cv2.imwrite(args.step_dir+str(i)+".jpg",img2)
             # this is for the visualization of interface, will refresh every second
             cv2.imwrite(args.step_dir+"curstep.jpg",img2)
+            import time
+            time.sleep(0.3)
             # cv2.imshow("sdc",img2)
             # cv2.waitKey(1)
             continue
@@ -198,14 +201,14 @@ if __name__ == '__main__':
     except:
         print("Dir already clean")
     # os.mkdir("steps")
-    os.makedirs(args.step_dir,exist_ok=True)
+    os.makedirs(args.step_dir)
 
     try:
         os.system("rm -rf {}".format(args.out_dir))
     except:
         print("Dir already clean")
     # os.mkdir("steps")
-    os.makedirs(args.out_dir,exist_ok=True)
+    os.makedirs(args.out_dir)
 
 
     img = cv2.imread(args.imagePath,0) # load grayscale maze image

@@ -11,6 +11,10 @@
 //     }
 //     console.log(`stdout: ${stdout}`);
 // });
+
+
+
+
 function refresh(node)
 {
    var times = 100; // gap in Milli Seconds;
@@ -92,10 +96,14 @@ let vueApp = new Vue({
             })
             topic2.subscribe((message) => {
                 // console.log(message)
+
                 document.getElementById("linear_acceleration").innerHTML = "x: " +message.linear_acceleration.x+" y: " +message.linear_acceleration.y+" z: " +message.linear_acceleration.z;
-                document.getElementById("orientation_imu").innerHTML = "x: " +message.orientation.x+" y: " +message.orientation.y+" z: " +message.orientation.z;
+                document.getElementById("orientation_imu").innerHTML = "x: " +message.orientation.x+" y: " +message.orientation.y+" z: " +message.orientation.z+" w: " +message.orientation.w;
                 document.getElementById("angular_velocity").innerHTML = "x: " +message.angular_velocity.x+" y: " +message.angular_velocity.y+" z: " +message.angular_velocity.z;
-                
+                const quaternion = new THREE.Quaternion(message.angular_velocity.x,message.angular_velocity.y,message.angular_velocity.z,message.angular_velocity.w)
+                const angle = new THREE.Euler()
+                angle.setFromQuaternion(quaternion)
+                document.getElementById("angle").innerHTML = "Roll "+angle._x+ " Pitch "+ angle._y+" Yaw "+angle._z
 
             })
 
@@ -201,15 +209,15 @@ Highcharts.chart('container', {
 
   series: [{
     type: 'column',
-    name: 'X',
+    name: 'Roll',
     data: [1, 1, 1, 8, 1, 1, 1, 1]
   }, {
     type: 'line',
-    name: 'Y',
+    name: 'YPitch',
     data: [1,1,1,1, 1, 1, 8, 1]
   }, {
     type: 'area',
-    name: 'Z',
+    name: 'Yaw',
     data: [1, 8, 1, 1, 1, 1, 1, 1]
   }]
 });
