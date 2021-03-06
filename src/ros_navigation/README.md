@@ -19,7 +19,7 @@
 2) source ~/.bashrc
 ** delete existing bashrc:  gedit ~/.bashrc
 
-## ROSLAUNCH CODE (GMapping using A* Algorithm)
+## ROSLAUNCH CODE (GMapping using RRT* Algorithm)
 
 ### 0. RUN ROSCORE 
 roscore
