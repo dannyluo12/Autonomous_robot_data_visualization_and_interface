@@ -1,12 +1,15 @@
-# Autonomous Robots Data Visualization and Interface
+# Data Visualizations and Interface for Autonomous Robots
 
-This project aims to create and illustrate data visualizations for autonomous robots. In addition, interfacing and interacting with the robot via an interface will also be demonstrated in this repository. Primarily, visualizations will be done in ROS, Gazebo, and other robotics software. Visualizations will demonstrate the process in which an autnomous vehicle decides the best path to navigate. RRT* and A* algorithms are algorithms that are explored and visualized in this respective repo. Autoware simulator is also a potential building block later on. 
+This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. RRT* and A* algorithms are explored and visualized in this respective repo. Ultimately, through various testing, RRT* algorithm was decided to be the better natvigation planning algorithm. 
 
 ## Running the project
-* Use the command `launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always` in order to have the necessary environment to run data processing, analysis, and visualization.
+* Use the command `launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always` in order to have the necessary docker environment for creating the visualizations and genearting the interface.
 
 ## Building the project using `run.py`
+* Use the command `python run.py data` to ...
+* Use the command `python run.py clean` to ...
 * Use the command `python run.py test` to run the visualization of RRT algorithm in test data, output images can be found in the testdata/step_out and testdata/test_out directories.
+* Use the command `python run.py all` to run the visualization of RRT algorithm on cleaned data/map, output images can be found in the data/step_out and data/test_out directories.
 
 ### Contributions:
 <b>Yuxi Luo</b> A14862234 <br />
