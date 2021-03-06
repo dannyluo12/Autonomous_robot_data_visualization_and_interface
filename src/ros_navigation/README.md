@@ -26,30 +26,30 @@
 
 ### 1. CREATING THE MAP:
 
-1) Launch Gazebo Simulator
+<b>1) Launch Gazebo Simulator</b> <br />
 roslaunch ucsd_f1tenth_gazebo mybot_test.launch
 
-2) Launch GMapping Node
+<b>2) Launch GMapping Node</b> <br />
 roslaunch ucsd_f1tenth_navigation gmapping_demo.launch
 
-3) Launch RViz with GMapping Node
+<b>3) Launch RViz with GMapping Node</b> <br />
 roslaunch ucsd_f1tenth_description mybot_rviz_gmapping.launch
 
-4) Launch Teleop Node For Control
+<b>4) Launch Teleop Node For Control</b> <br />
 roslaunch ucsd_f1tenth_navigation mybot_teleop.launch
 
 ### 2. SAVING THE MAP:
 
-1) Save map to ucsd_f1tenth_navigation directory.
+<b>1) Save map to ucsd_f1tenth_navigation directory</b> <br />
 rosrun map_server map_saver -f ~/ucsd_sim_ws/src/ucsd_f1tenth_navigation/maps/test_map
 
 ### 3. LOADING THE MAP:
 
-1) Launch Gazebo Simulator
+<b>1) Launch Gazebo Simulator</b> <br />
 roslaunch ucsd_f1tenth_gazebo mybot_test.launch
 
-2) Launch Completd GMapped Node
+<b>2) Launch Completd GMapped Node</b> <br />
 roslaunch ucsd_f1tenth_navigation amcl_demo.launch
 
-3) Launch RViz To Start Autonomous Navigation
+<b>3) Launch RViz To Start Autonomous Navigation</b> <br />
 roslaunch ucsd_f1tenth_description mybot_rviz_amcl.launch
