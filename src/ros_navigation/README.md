@@ -22,7 +22,7 @@
 ## ROSLAUNCH CODE (GMapping using RRT* Algorithm)
 
 ### 0. RUN ROSCORE 
-roscore
+1) roscore
 
 ### 1. CREATING THE MAP:
 
