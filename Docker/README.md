@@ -1,7 +1,7 @@
 # Dockerhub Link: 
 
 Can find access to repo and image here:
-https://hub.docker.com/r/elvishelvis/dsc180s2g3
+https://hub.docker.com/repository/docker/dannyluo12/visualization_and_interface
 
 
 
