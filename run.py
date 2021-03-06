@@ -5,13 +5,16 @@ import os
 sys.path.insert(0, 'src')
 
 from src.generate_rrt_vis import *
-from src.util import run_viz
+from src.generate_a_star_vis.py import *
+from src.image_reader.py import *
+from src.util import *
 
-# TODO 
+
 points_cfg_test = json.load(open('config/rrt_vis_points_test.json'))
 points_cfg_all = json.load(open('config/rrt_vis_points_all.json'))
 mapping_cfg_test = json.load(open('config/rrt_vis_mapping_test.json'))
 mapping_cfg_all = json.load(open('config/rrt_vis_mapping_all.json'))
+clean_file = json.load(open('config/clean_file.json'))
 
 
 
@@ -21,17 +24,16 @@ def main(targets):
         print('Successfully ran RRT visualization on maze.png, optimal navigation path can be viewed {}'.format(mapping_cfg_test['out_dir']))
         
     if 'data' in targets:
-        # TODO
-        # getting_data = get_data(**data_cfg)
-        pass
-        # print('Data from project successfully pulled into ...')
+        create_data()
+        print('Successfully created data folder in the main directory')
         
-    if 'plot' in targets:
-    # TODO
-        #gmapping_plot = plot_data(**gmapping_plots_cfg)
-        #rtab_plot = plot_data(**rtab_plots_cfg)
-        pass
-        # print('... sucessfully plotted')
+    if 'clean' in targets:
+        resize(**clean_file)
+        print('Files inputted sucessfully cleaned. Should now be ready for analysis, visualization to be loaded on interactive interface')
+        
+    if 'analyze' in targets:
+        analyze(**mapping_cfg_all,**points_cfg_all)
+        print('Given navigaion algorithms have been successfully tested for performance comparison. Results can be found in the main data directory')
         
     if 'all' in targets:
         run_viz(**mapping_cfg_all,**points_cfg_all)
