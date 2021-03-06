@@ -21,11 +21,11 @@ $ launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always
 * Use the command `python run.py all` to run the visualization of RRT algorithm on cleaned data/map, output images can be found in the data/step_out and data/test_out directories.
 
 ### Contributions:
-<b>Yuxi Luo</b> A14862234 <br />
+<b>Yuxi Luo</b> <br />
 Contributed to developing visualizations for RRT* and A* algorithms. Tested performance of each navigation algorithm to benchmark each and determine better performer. Collected and cleaned data from alternative groups to enable visualization and interface development. Tested different ROSBAGS for data type compatibility. Investigated various forms of visualization from different ROS topics (diff sensors, camera, lidar, etc.). Helped in managing and updating Github repo and project website.
 
-<b>Seokmin Hong</b> A14614169 <br />
+<b>Seokmin Hong</b> <br />
 Contributed by developing the RRT* and A* algorithms in the gazebo simulator using different ROS packages as well as writing Rviz scripts to allow autonomous navigation using these algorithms. Also downloaded and implemented the F1Tenth track in the gazebo simulator that will be used for future on-line racing. Mainly helped teammates in creating and writing the report.
 
-<b>Jia Shi</b> A15233744 <br />
+<b>Jia Shi</b> <br />
 Contributed to the research of visualization and interface. Developed a interactive interface with roslibjs and webridge to connect ROS with web page. Finished the course of web visualization on Robot ignite and transfer the workspace into local machine. Helped other teams with the line detection algorithm. Helped teammates with the coding and helped with the setup and completion of github repo.
