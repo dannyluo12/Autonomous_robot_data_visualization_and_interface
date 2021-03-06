@@ -160,7 +160,7 @@ def main():
     grid_size = 2.0
     robot_radius = 2.0
 
-    image = cv2.imread('maze.png') # should note that the maze gets inverted somehow through cv2
+    image = cv2.imread("./testdata/test_images/maze.PNG") # should note that the maze gets inverted somehow through cv2
     image = cv2.resize(image, (200,200))
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     (width, length) = gray.shape
