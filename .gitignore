@@ -5,6 +5,7 @@ __pycache__/
 steps/
 testdata/step_out/
 testdata/test_out/
+data/
 
 # C extensions
 *.so

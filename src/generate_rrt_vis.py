@@ -1,12 +1,6 @@
 """
-Path planning with Rapidly-Exploring Random Trees (RRT)
+Path planning with Rapidly-Exploring Random Trees (RRT),
 Application works best with grayscale PNG images
-TODO: - update to interact with Elvis' interface 
-      - interact this rrt.py file with create_grayscale code
-      - update dir/paths to output "out.png" and steps into isolated data (or something else) folder
-      - update to interact with potentially not grayscale images
-      - potentially interact live with camera grayscale images (tested, might not be too useful)
-      - double check filepath/dir for image outputs
 """
 
 import cv2
