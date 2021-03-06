@@ -27,6 +27,8 @@ Citation references here: <br/>
 [19] https://ieeexplore.ieee.org/abstract/document/8317265 <br/>
 [20] http://acl.mit.edu/papers/KuwataIROS08.pdf <br/> 
 [21] http://www.cs.binghamton.edu/~szhang/teaching/18spring/reports/Luo-Ma-Zhou.pdf <br/>
+[22] https://github.com/kangcshin/a-star-maze-solver/blob/master/a_star.py <br/>
+[23] https://github.com/nimRobotics/RRT <br/>
 
 ***
 

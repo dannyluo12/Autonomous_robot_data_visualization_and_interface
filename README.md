@@ -1,13 +1,14 @@
 # Data Visualizations and Interface for Autonomous Robots
 
-This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. Ultimately, RRT* algorithms is the primary navigation algorithm used and illustrated in this project.
+This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. After analyzing the performance of A* algorithm versis the performance of RRT* algorithm, it is determined that RRT* performs better. Ultimately, RRT* algorithms is the primary navigation algorithm used and illustrated in this project.
 
 ## Running the project
 * Use the command `launch.sh -i dannyluo12/visualization_and_interface:latest -c 4 -m 8 -P Always` in order to have the necessary docker environment for creating the visualizations and genearting the interface.
 
 ## Building the project using `run.py`
-* Use the command `python run.py data` to ...
-* Use the command `python run.py clean` to ...
+* Use the command `python run.py data` to create data folder. Will contain directories to properly store image and sensor data that is outputted.
+* Use the command `python run.py clean` to ensure that data is scaled properly to optimize runtime. Includes imaging data for running navigation algorithms as well as executing interface.
+* Use the command `python run.py analyze` to compare the performance of A* algorithm to RRT* for navigation on the same map.
 * Use the command `python run.py test` to run the visualization of RRT algorithm in test data, output images can be found in the testdata/step_out and testdata/test_out directories.
 * Use the command `python run.py all` to run the visualization of RRT algorithm on cleaned data/map, output images can be found in the data/step_out and data/test_out directories.
 
