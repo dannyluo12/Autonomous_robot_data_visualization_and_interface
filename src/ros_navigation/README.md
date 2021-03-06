@@ -1,25 +1,25 @@
 # Autonomous Navigation Using Gazebo Simulator / RViz
 
-## INSTALLATION ROS KINETIC & TURTLEBOT (UBUNTU 16.04)
+## I. INSTALLATION ROS KINETIC & TURTLEBOT (UBUNTU 16.04)
 
 1) sudo apt-get install ros-kinetic-desktop-full
 2) sudo apt-get install ros-kinetic-turtlebot*
 3) sudo apt-get install ros-kinetic-catkin python-catkin-tools 
 
-## EXTRACT & BUILD 
+## II. EXTRACT & BUILD 
 
 1) mkdir ucsd_sim_ws
 2) catkin config --extend /opt/ros/kinetic 
 3) paste src folder into ucsd_sim_ws directory.
 4) catkin build
 
-## SOURCE DIRECTORY
+## III. SOURCE DIRECTORY
 
 1) echo "source ~/ucsd_sim_ws/devel/setup.bash" >> ~/.bashrc
 2) source ~/.bashrc
 ** delete existing bashrc:  gedit ~/.bashrc
 
-## ROSLAUNCH CODE (GMapping using RRT* Algorithm)
+## IV. ROSLAUNCH CODE (GMapping using RRT* Algorithm)
 
 ### 0. RUN ROSCORE 
 1) roscore
