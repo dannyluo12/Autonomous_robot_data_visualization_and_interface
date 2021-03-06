@@ -40,7 +40,7 @@ roslaunch ucsd_f1tenth_navigation mybot_teleop.launch
 
 ### 2. SAVING THE MAP:
 
-<b>1) Save map to ucsd_f1tenth_navigation directory</b> <br />
+<b>1) Save Map to ucsd_f1tenth_navigation Directory</b> <br />
 rosrun map_server map_saver -f ~/ucsd_sim_ws/src/ucsd_f1tenth_navigation/maps/test_map
 
 ### 3. LOADING THE MAP:
