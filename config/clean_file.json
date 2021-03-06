@@ -1,6 +1,6 @@
 {
     "file" : "testdata/test_images/maze.PNG",
-    "param1" : "200",
-    "param2" : "200"
+    "param1" : 200,
+    "param2" : 200
 }
 

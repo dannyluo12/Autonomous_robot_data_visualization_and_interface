@@ -36,8 +36,9 @@ def resize(file, param1, param2):
     '''
     image = cv2.imread(file) # should note that the image gets inverted sometimes through cv2
     image = cv2.resize(image, (param1,param2))
+    success_resize = "Image has been successfully resized to dimensions found in clean_file.JSON"
     
-    return image
+    return success_resize
     
 def analyze(map_,stepsize,step_dir, out_dir, start_x,start_y,end_x,end_y):
     '''
@@ -45,13 +46,15 @@ def analyze(map_,stepsize,step_dir, out_dir, start_x,start_y,end_x,end_y):
     Note for the future is to implement feature to compare ground truth difference for analysis to compare performance.
     '''
     start_alg1 = time.time()
+    print('hi world') # example execution
     os.system("python ./src/generate_rrt_vis.py -start {} {} -stop {} {} -p {} -s {} -step_dir {} -out_dir {}".format(start_x,start_y,end_x,end_y,map_,stepsize,step_dir,out_dir))
     end_alg1 = time.time()
     total_time_alg1 = end_alg1 - start_alg1
     print('The total runtime for algorithm 1 is:', total_time_alg1)
     
     start_alg2 = time.time()
-    os.system("python ./src/generate_a_star_vis.py")
+    print('hello world') # example execution
+    os.system("python ./src/generate_a_star_vis.py") # settings default in python file (can change withing)
     end_alg2 = time.time()
     total_time_alg2 = end_alg2 - start_alg2
     print('The total runtime for algorithm 2 is:', total_time_alg2)
@@ -64,7 +67,6 @@ def analyze(map_,stepsize,step_dir, out_dir, start_x,start_y,end_x,end_y):
     return better_performer
 
 def run_viz(map_,stepsize,step_dir, out_dir, start_x,start_y,end_x,end_y):
-
     '''
     Creates data directory and run visualization code to be generated
     '''

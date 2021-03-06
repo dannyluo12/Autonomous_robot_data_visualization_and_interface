@@ -4,9 +4,9 @@ import os
 
 sys.path.insert(0, 'src')
 
-from src.generate_rrt_vis import *
-from src.generate_a_star_vis.py import *
-from src.image_reader.py import *
+#from src.generate_rrt_vis import *
+#from src.generate_a_star_vis.py import *
+#from src.image_reader.py import *
 from src.util import *
 
 
