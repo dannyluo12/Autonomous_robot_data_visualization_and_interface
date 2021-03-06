@@ -1,6 +1,6 @@
 # Autonomous Navigation Using Gazebo Simulator / RViz
 
-## I. INSTALLATION ROS KINETIC & TURTLEBOT (UBUNTU 16.04)
+## I. INSTALLATION ROS KINETIC & TURTLEBOT (Ubuntu 16.04)
 
 1) sudo apt-get install ros-kinetic-desktop-full
 2) sudo apt-get install ros-kinetic-turtlebot*
@@ -19,7 +19,7 @@
 2) source ~/.bashrc
 ** delete existing bashrc:  gedit ~/.bashrc
 
-## IV. ROSLAUNCH CODE (GMapping using RRT* Algorithm)
+## IV. ROSLAUNCH CODE (GMapping Using RRT* Algorithm)
 
 ### 0. RUN ROSCORE 
 1) roscore
