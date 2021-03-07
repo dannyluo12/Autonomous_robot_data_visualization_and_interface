@@ -1,11 +1,21 @@
-run this to launch the server first, only after this the "Connect!" button can be clicked:
+# Interactive User Interface Using Rosbridge
 
-1. roslaunch rosbridge_server rosbridge_websocket.launch
+## I. INSTALLATION ROSBRIDGE (UBUNTU 16.04)
 
-next: 
+1) sudo apt-get install ros-kinetic-rosbridge-server
 
-python3 rgb8.py is to extract image data from .bagfile (put data.bag into the same direction)
+## II. LAUNCH SERVER AND HTML
 
-make sure to run generate_rrt_vis.py first to see nagivation demo on interface
+<b>1) Launch Rosbridge Server </b> <br />
+roslaunch rosbridge_server rosbridge_websocket.launch
+<b>2) Launch Web Browser </b> <br />
+drag web.html to internet browser
+<b>3) Connect to Rosbridge Server </b> <br />
+click "Connect!" button to connect to Rosbridge server.
 
-make sure to run rosbag play [ImuFileName].bag to see IMU sensor demo
+## III. INTERACT WITH VEHICLE
+
+<b>1) Run Python Visualizer </b> <br />
+python generate_rrt_vis.py
+<b>2) Navigate Autonomously </b> <br />
+click "Preset Value" button, then click "Submit" button
