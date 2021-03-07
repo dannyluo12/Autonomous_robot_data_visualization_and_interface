@@ -2,7 +2,7 @@
 
 ## I. INSTALLATION ROSBRIDGE (UBUNTU 16.04)
 
-1) sudo apt-get install ros-kinetic-rosbridge-server
+<b>1) sudo apt-get install ros-kinetic-rosbridge-server</b>
 
 ## II. LAUNCH SERVER AND HTML
 
