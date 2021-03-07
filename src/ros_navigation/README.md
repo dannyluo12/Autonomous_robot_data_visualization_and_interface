@@ -4,7 +4,8 @@
 
 1) sudo apt-get install ros-kinetic-desktop-full
 2) sudo apt-get install ros-kinetic-turtlebot*
-3) sudo apt-get install ros-kinetic-catkin python-catkin-tools 
+3) sudo apt-get install ros-kinetic-catkin python-catkin-tools
+4) sudo apt-get install ros-kinetic-web-video-server 
 
 ## II. EXTRACT & BUILD 
 
@@ -53,3 +54,14 @@ roslaunch ucsd_f1tenth_navigation amcl_demo.launch
 
 <b>3) Launch RViz To Start Autonomous Navigation</b> <br />
 roslaunch ucsd_f1tenth_description mybot_rviz_amcl.launch
+
+## V. DISPLAY IMAGE THROUGH WEB BROWSER
+
+<b>1) Launch Web Video Server</b> <br />
+rosrun web_video_server web_video_server
+
+<b>2) Access Localhost:8080</b> <br />
+localhost:8080
+
+<b>3) View Image</b> <br />
+http://localhost:8080/stream?topic=/mybot/camera1/image_raw
