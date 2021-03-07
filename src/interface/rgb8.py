@@ -6,7 +6,7 @@ import numpy as np
 import rosbag 
 import cv2
 
-path_to_bag = './data.bag'
+path_to_bag = '/home/SENSETIME/shijia/Desktop/data.bag'
 topic='/cmr_filtered/image'
 
 times = []

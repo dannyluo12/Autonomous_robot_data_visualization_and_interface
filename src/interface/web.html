@@ -12,31 +12,79 @@
     <script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js">
 
     </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <style type="text/css">* { padding: 0; margin: 0; }
+    div {
+  background-color: white;
+}
+</style>
     <!-- <script type="text/javascript" src="mjpegcanvas.min.js"></script> -->
     <!-- <meta http-equiv="refresh" content="1"> -->
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" >
     <!-- header of the page -->
     <header class="header">
+
         <div class="container">
             <div class="jumbotron text-center">
                 <h1>Autonomous Robot Interface</h1>
-                <p>This is the demo website that can visualize the input from robotic sensor</p>
+                <p>Demo of interface that will visualize the autonomous vehicle and its sensors</p>
             </div>
+            
         </div>
     </header>
 
     <!-- main content -->
     <main id="vueApp">
+
         <div class="container">
             <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <figure>
+                        <div id="container"></div>
+                        <div id="container-angle"></div>
+                                          
+                        </figure>
+                        <br /><br /><br />
+                        <figure class="highcharts-figure">
+                        <div id="container-bat" class="chart-container"></div>
+                            <div id="container-speed" class="chart-container"></div>
+                        </figure>      
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The navigation image" style="width:500px;height:200px;">
+                            <br><br><br>
+<!--                             <img src="camera.png" id='img_camera' alt="The camera image" style="width:500px;height:200px;"> -->
+                        <img src="http://localhost:8080/stream?topic=/mybot/camera1/image_raw" style="width:500px;height:200px;">
+                            </div>
+                        </div>
+                    </div>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h3>{{ menu_title }}</h3>
                             <hr>
-                            <label>ROSBridge address</label>
+                            <label>RosBridge Adress:</label>
                             <br>
                             <input type="text" v-model="rosbridge_address" />
                             <br>
@@ -50,10 +98,11 @@
                         <div class="card-body">
                             <h2 class="text-center">{{ sub_title }}</h2>
                             <hr>
-                            <p>topic that interface subscribe to</p>
-                            <button class="mt-2 btn btn-primary" >/cmr_filtered/image</button>
-                            <button class="mt-2 btn btn-primary" >/car_1/base/odom</button>
-                            <button class="mt-2 btn btn-primary" >/imu</button>
+                            <p>ROS topics that the interface <br /> is currently subscribed to:</p>
+                            <button class="mt-2 btn btn-primary" >/move_base_simple/goal</button>
+			    <br />
+                            <button class="mt-2 btn btn-primary" >/cmd_vel</button>
+                            <button class="mt-2 btn btn-primary" >/tf</button>
                         </div>
                     </div>
                 </div>
@@ -63,20 +112,45 @@
                         <div class="card-body">
                             <h2 class="text-center">{{ pub_title }}</h2>
                             <hr>
-                            <p>topic that interface can publish messenge to</p>
-                            <button class="mt-2 btn btn-primary" :disabled="!connected" @click="sendCommand">Move the turtle!</button>
-                            <button class="mt-2 btn btn-primary" :disabled="!connected" @click="turnRight">Turn right!</button>
-                            <button class="mt-2 btn btn-danger" :disabled="!connected" @click="stop">Stop!</button>
+                            <p>Input position and orientation data:</p>
+                            <form>
+                            <label for="positionx">X:</label>
+                            <input type="text" id="positionx" name="positionx" size="10">
+                            <label for="positiony">Y:</label>
+                            <input type="text" id="positiony" name="positiony" size="10"><br>
+                            <label for="orientationz">Z:</label>
+                            <input type="text" id="orientationz" name="orientationz" size="10">
+                            <label for="orientationw">W:</label>
+                            <input type="text" id="orientationw" name="orientationw" size="10"><br><br>
+                          </form>
+                            <button class="mt-2 btn btn-primary"  @click="publish">Submit</button>
+                            <button class="mt-2 btn btn-primary"  @click="preset">Preset Value</button>
+                            <!-- <button class="mt-2 btn btn-primary" :disabled="!connected" @click="turnRight">Turn right!</button> -->
+                            <!-- <button class="mt-2 btn btn-danger" :disabled="!connected" @click="stop">Stop!</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center">Robot Position</h2>
+                            <textarea id="mappos" name="mappos" rows="4" cols="117">
+                             </textarea>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                    
+                
+
+
+<!--                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h2 class="text-center">{{ camera_title }}</h2>
                             <hr>
-                            <p>run: python rgb8.py</p>
+                    
+                            <button  id="command_vision" onclick="send_command('command_vision','vision')"> Play camera demo</button>
                             <img src="camera.png" id='img_camera' alt="The camera image" style="width:400px;height:300px;">
                             
                             
@@ -89,20 +163,22 @@
                         <div class="card-body">
                             <h2 class="text-center">{{ navi_title }}</h2>
                             <hr>
-                            <p>run: python3 generate_rrt_vis.py</p>
+                            
+                            <button  id="command_rrt" onclick="send_command('command_rrt','rrt')"> Play RRT demo</button>
+
                             <img src="../../testdata/viz_out/curstep.jpg" id="img_navi" alt="The navigation image" style="width:400px;height:300px;">
                             
                             
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-md-6">
+ <!--                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h2 class="text-center">{{ IMU_title }}</h2>
                             <hr>
-                            <p>run: rosbag play gps_imu_odom.bag</p>
+                            <button  id="command_imu" onclick="send_command('command_imu','imu')"> Play IMU demo</button>
                             <h3 >pose</h3>
                             <p >position</p>
                             <p id="position"></p>
@@ -129,34 +205,53 @@
                         </div>
                     </div>
                 </div>
-                                <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h2 class="text-center">{{ IMU_G1_title }}</h2>
                             <hr>
-                            <h4>Need more instruction of what to show from bag</h4>
-                            <script src="https://code.highcharts.com/highcharts.js"></script>
-                            <script src="https://code.highcharts.com/highcharts-more.js"></script>
-                            <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                            <script src="https://code.highcharts.com/modules/export-data.js"></script>
-                            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+                            
+
 
                             <figure class="highcharts-figure">
-                              <div id="container"></div>
-                              
-                            </figure>
+
                             
                             
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h2 class="text-center">{{ bat_title }}</h2>
+                            <hr>
+
+
+                            
+                            
+                        </div>
+                    </div>
+                                        <div class="card">
+                        <div class="card-body">
+                            <
+                            <h2 class="text-center">{{ speed_title }}</h2>
+                            <hr>
+
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                </div> -->
+
             </div>
         </div>
     </main>
-    <div class="col-md-6 col-sm-6 text-center">
-                <div id="divCamera"></div>
-            </div>
-    
+
     
 
 
