@@ -6,13 +6,10 @@
 
 ***
 Citation references here: <br/>
-[1] https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/192 <br/>
 [2] https://avp-project.uk/path-planning-using-the-osm-xml-map <br/>
 [3] https://jonathan-hui.medium.com/self-driving-car-path-planning-to-maneuver-the-traffic-ac63f5a620e2 <br/>
-[4] https://docs.google.com/presentation/d/1WF4iZBzXL3PYpVYZRTxiWcomRrCbiK-MJGgjndX3KYk/edit#slide=id.gafa0e1a93b_0_0 <br/>
 [9] https://github.com/nimRobotics/RRT <br/>
 [10] http://wiki.ros.org/rosbridge_suite/Tutorials/RunningRosbridge#Talking_to_Rosbridge <br/>
-[12] http://wiki.ros.org/rrt_exploration <br/>
 [13] http://gazebosim.org/tutorials?tut=ros_overview <br/>
 [14] http://wiki.ros.org/Robots/TurtleBot <br/>
 [15] https://f1tenth.dev/ <br/>
@@ -24,6 +21,8 @@ Citation references here: <br/>
 [21] http://www.cs.binghamton.edu/~szhang/teaching/18spring/reports/Luo-Ma-Zhou.pdf <br/>
 [22] https://github.com/kangcshin/a-star-maze-solver/blob/master/a_star.py <br/>
 [23] https://github.com/nimRobotics/RRT <br/>
-
+[2] https://avp-project.uk/path-planning-using-the-osm-xml-map <br/>
+[2] https://avp-project.uk/path-planning-using-the-osm-xml-map <br/>
+[2] https://avp-project.uk/path-planning-using-the-osm-xml-map
 ***
 
