@@ -1,8 +1,7 @@
-# DSC180B C01 Group 3
+# Report and References
 
 
-## [Report](https://docs.google.com/document/d/1qqh2aneYYA49mJ8OWd9EqrixGu1xMaPa6zLT7eekv6o/edit?usp=sharing)
-* <b>note: </b> permissions are set to any ucsd email can view
+## [Report](https://github.com/dannyluo12/Autonomous_robot_data_visualization_and_interface/blob/main/references/Data_Visualizations_and_Interface_For_Autonomous_Robots_Report_Final.pdf)
 
 ***
 Citation references here: <br/>
