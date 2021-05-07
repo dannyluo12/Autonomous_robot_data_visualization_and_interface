@@ -1,5 +1,7 @@
 # Data Visualizations and Interface For Autonomous Robots
 
+Project website can be found here: [https://elvishelvis.github.io/](https://elvishelvis.github.io/)
+
 This project aims to create data visualizations and an interactive interface for autonomous robots. The intent and design of visualizations created for this project were catered towards optimizing racing performance on the [Thunderhill track](https://www.thunderhill.com/). Visualizations include birdseye view of optimal path on mapped track, live camera feed, lidar readings, IMU data (position and orientation) visualized, battery status display, and various other visualizations to show the health and status of the vehicle. The interface that displays all of these various tools and visualizations are meant to be interactive and communicate with the Autonomous Robot via Rosbridge, which not only allow users to control the Gazebo Robot action by simple interface interaction like clicking button or inputing text, but also monitor the realtime situation of the robot navigating in map. The visualizations will be primarily illustrated through Python, ROS, Gazebo, RViz, and other robotics software. After analyzing the performance of A* algorithm versus the performance of RRT* algorithm, it is determined that RRT* performs better. Ultimately, RRT* algorithms is the primary navigation algorithm used and illustrated in this project.
 
 ## Running the project
